@@ -43,7 +43,7 @@
                 </a>
             </div>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
+         
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="hidden">
@@ -421,6 +421,33 @@
                                 <h2>ፍሉይ ናይ ህጻን ትምህርቲ</h2>
                                 <p class="item-intro text-muted"></p>
                                 <img class="img-responsive img-centered" src="img/programs/ece_program_inside.jpg" alt="">
+                                const colors = ['red', 'blue', 'green', 'yellow'];
+const correctColor = colors[Math.floor(Math.random() * colors.length)];
+
+document.getElementById('color-box').style.backgroundColor = correctColor;
+
+colors.forEach(color => {
+  const colorOption = document.createElement('div');
+  colorOption.className = 'color-option';
+  colorOption.style.backgroundColor = color;
+  colorOption.addEventListener('click', () => checkAnswer(color));
+  document.getElementById('color-options').appendChild(colorOption);
+});
+
+function checkAnswer(selectedColor) {
+  if (selectedColor === correctColor) {
+    alert('Congratulations! You matched the colors!');
+    resetGame();
+  } else {
+    alert('Try again! Wrong color.');
+  }
+}
+
+function resetGame() {
+  correctColor = colors[Math.floor(Math.random() * colors.length)];
+  document.getElementById('color-box').style.backgroundColor = correctColor;
+}
+
                                 <p>ፍሉይ መደባት ትምህርቲ ህጻናት (ECE) ንጠለባት ናይቶም ናይ ትምህርቲ ስንክልና ዘለዎም ተማሃሮ ንምምላእ ዝተዳለወ እዩ። ዕላማታት ውልቃዊ መደብ ትምህርቲ ንናይ ተማሃሮ ኣካዳሚያዊ፣ ማሕበራዊ/ስምዒታውን ምስግጋራውን ድሌታት ንምምላእ ዝተዳለዉ እዮም (ንኣብነት፣ ናብ ዝተፈላለየ ኣካዳሚያዊ መደብ ምቕያር ወይ ካብ ሓደ ደረጃ ናብ ካልእ ደረጃ ምግስጋስ።)</p>
                                 <ul class="list-inline">
                                      <li>ዝተሓደሰሉ: ጥቅምቲ 2020</li>
